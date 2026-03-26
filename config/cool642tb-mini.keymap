@@ -3,11 +3,6 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
-
-// #define MOUSE 4
- #define SCROLL 5
-// #define NUM 6
-
 // スクロール量定義
 
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
@@ -60,6 +55,24 @@
 };
 
 &lt { hold-while-undecided; };
+
+&trackball {
+    //  automouse-layer = <4>;
+
+    scroll-layers = <5>;
+
+    // arrows {
+    //     layers = <3>;
+    //     bindings =
+    //         <&kp RIGHT_ARROW>,
+    //         <&kp LEFT_ARROW>,
+    //         <&kp UP_ARROW>,
+    //         <&kp DOWN_ARROW>;
+    //     tick = <10>;
+    //     wait-ms = <5>;
+    //     tap-ms = <5>;
+    // };
+};
 
 / {
     combos {
