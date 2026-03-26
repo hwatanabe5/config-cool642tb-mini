@@ -3,8 +3,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
-// スクロール量定義
-
+#define SCROLL 5
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 
 // OS設定を日本語キーボードのまま使用するための変換定義
@@ -55,24 +54,6 @@
 };
 
 &lt { hold-while-undecided; };
-
-&trackball {
-    //  automouse-layer = <4>;
-
-    scroll-layers = <5>;
-
-    // arrows {
-    //     layers = <3>;
-    //     bindings =
-    //         <&kp RIGHT_ARROW>,
-    //         <&kp LEFT_ARROW>,
-    //         <&kp UP_ARROW>,
-    //         <&kp DOWN_ARROW>;
-    //     tick = <10>;
-    //     wait-ms = <5>;
-    //     tap-ms = <5>;
-    // };
-};
 
 / {
     combos {
