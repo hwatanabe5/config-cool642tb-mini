@@ -1,4 +1,5 @@
 #include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
@@ -60,7 +61,7 @@
 
         tab {
             bindings = <&kp TAB>;
-            key-positions = <41 30 39>;
+            key-positions = <41 30>;
             layers = <0>; // 指定レイヤーでのみ有効
         };
 
@@ -76,6 +77,7 @@
             key-positions = <38 23>;
             timeout-ms = <30>;
             layers = <0>; // 指定レイヤーでのみ有効
+
         };
 
         F9_ {
@@ -217,8 +219,8 @@
             layers = <0 3>; // 指定レイヤーでのみ有効
         };
 
-        SCR_ {
-            bindings = <&mo 5>;
+        WCLICK_ {
+            bindings = <&WCLICK_>;
             key-positions = <31 32>;
             layers = <0>; // 指定レイヤーでのみ有効
         };
@@ -241,12 +243,6 @@
         CAPSLOCK_ {
             bindings = <&kp LS(JP_EISU)>;
             key-positions = <24 13>;
-        };
-
-        SCR {
-            bindings = <&mo 5>;
-            key-positions = <31 32>;
-            layers = <0>;
         };
     };
 
@@ -359,15 +355,16 @@
         };
     };
 
+
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             bindings = <
-&kp Q   &kp W   &kp E    &kp R        &kp T                                                      &kp Y           &kp U        &kp I     &kp O     &kp P
-&kp A   &kp S   &lt 2 D  &lt 3 F      &kp G           &trans                    &trans           &kp H           &kp J        &kp K     &kp L     &mt LEFT_SHIFT JP_MINUS
-&kp Z   &kp X   &kp C    &mt LCTRL V  &mt LEFT_ALT B  &trans                    &trans           &mt LEFT_ALT N  &mt LCTRL M  &mkp MB1  &mkp MB2  &kp DELETE
-&trans  &trans  &trans   &trans       &lt 1 JP_HENK   &mt LEFT_SHIFT SPACE      &lt 3 BACKSPACE  &lt 7 ENTER                                      &trans
+&kp Q   &kp W   &kp E    &kp R        &kp T                                                      &kp Y           &kp U        &kp I     &kp O         &kp P
+&kp A   &kp S   &lt 2 D  &lt 3 F      &kp G           &trans                    &trans           &kp H           &kp J        &kp K     &kp L         &mt LEFT_SHIFT JP_MINUS
+&kp Z   &kp X   &kp C    &mt LCTRL V  &mt LEFT_ALT B  &trans                    &trans           &mt LEFT_ALT N  &mt LCTRL M  &mkp MB1  &mkpmo 5 MB2  &kp DELETE
+&trans  &trans  &trans   &trans       &lt 1 JP_HENK   &mt LEFT_SHIFT SPACE      &lt 3 BACKSPACE  &lt 7 ENTER                                          &trans
             >;
 
             sensor-bindings = <&encoder_msc_down_up>;
@@ -415,10 +412,10 @@
 
         SCROLL {
             bindings = <
-&trans  &trans          &kp UP_ARROW    &trans           &trans                      &trans  &trans            &trans  &trans            &trans
-&trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans  &trans      &trans  &trans  &kp LEFT_CONTROL  &trans  &kp LEFT_CONTROL  &trans
-&trans  &trans          &trans          &trans           &trans  &trans      &trans  &trans  &kp LEFT_CONTROL  &trans  &trans            &trans
-&trans  &trans          &trans          &trans           &trans  &trans      &trans  &trans                                              &trans
+&trans  &trans          &kp UP_ARROW    &trans           &trans                      &trans  &trans            &trans            &trans            &trans
+&trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans  &trans      &trans  &trans  &kp LEFT_CONTROL  &trans            &kp LEFT_CONTROL  &trans
+&trans  &trans          &trans          &trans           &trans  &trans      &trans  &trans  &trans            &kp LEFT_CONTROL  &trans            &trans
+&trans  &trans          &trans          &trans           &trans  &trans      &trans  &trans                                                        &trans
             >;
         };
 
