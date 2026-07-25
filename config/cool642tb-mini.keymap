@@ -60,7 +60,7 @@
 
         tab {
             bindings = <&kp TAB>;
-            key-positions = <41 30>;
+            key-positions = <41 30 39>;
             layers = <0>; // 指定レイヤーでのみ有効
         };
 
@@ -218,7 +218,7 @@
         };
 
         SCR_ {
-            bindings = <&WCLICK_>;
+            bindings = <&mo 5>;
             key-positions = <31 32>;
             layers = <0>; // 指定レイヤーでのみ有効
         };
